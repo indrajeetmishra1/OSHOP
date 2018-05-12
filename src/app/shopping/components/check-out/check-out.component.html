@@ -1,0 +1,17 @@
+
+<!-- <div class="alert alert-danger" *ngIf="f.touched && f.invalid">One or More Input Fields are required</div> -->
+<h1>
+  Shipping
+</h1>
+
+<div class="row" *ngIf="cartid$ | async as cartid">
+    <div class="col-md-6">
+           <shipping-form [cartid]="cartid"></shipping-form>
+    </div>
+    <div  class="col-md-6">
+      <order-summary [cartid]="cartid"></order-summary>
+     </div>
+    </div>
+    
+    
+    

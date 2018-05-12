@@ -1,0 +1,25 @@
+.custom{
+padding-top: 200px
+
+}
+
+.customecard{
+
+    background-color: lightgreen
+
+}
+
+.customtext{
+    color: green
+}
+.customlink{
+    display: block;
+    background-color : greenyellow;
+    max-width: 160px;
+    color: black;
+    
+}
+.customdiv{
+
+    padding-top: 10px
+}

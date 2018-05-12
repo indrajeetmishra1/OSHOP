@@ -1,0 +1,23 @@
+<div class="example-container mat-elevation-z8">
+    
+      <mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="OrderId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>OrderId</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.$key}} </mat-cell>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="View">
+          <mat-header-cell *matHeaderCellDef>View</mat-header-cell>
+          <mat-cell *matCellDef="let row"> <a [routerLink]="['/view/orders/',row.$key]">View</a> </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+    
+      <mat-paginator [pageSizeOptions]="[2, 3, 4, 5]"></mat-paginator>
+    </div>

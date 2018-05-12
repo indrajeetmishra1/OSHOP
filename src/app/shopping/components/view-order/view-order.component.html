@@ -1,0 +1,38 @@
+
+
+
+       <!-- <div class="card-footer"  *ngIf="showaction && cartid">
+          <button *ngIf="cartid.getthecount(products)===0 ;else counttemplate" (click)="addToCart(products)" class="btn btn-secondary btn-block">Add to The Cart</button>
+          
+       <ng-template #counttemplate>
+         <product-quantity [products]="products" [cartid]="cartid"></product-quantity>
+          
+       </ng-template>
+  </div> -->
+
+
+  <div class="row">
+      <div class="col-md-4">
+       </div>
+      <div  class="col-md-4">
+
+<div *ngFor="let order of order" class="card" >
+    <img class="card-img-top" [src]="order.product.imageUrl" alt="order.product.title" *ngIf="order.product.imageUrl">
+      <div class="card-body custom">
+        <h4 class="card-title">{{order.quantity}}*{{order.product.title}}</h4>
+        <p class="card-text">Total Price {{order.totalprice | currency:'USD':true}}</p>
+         </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+</div>
+
+
+
+
+
+
+
+
+
+

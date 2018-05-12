@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <i class="fa fa-leaf" aria-hidden="true"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/shopping-cart">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+               <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
+              {{cart.gettotalcount}}
+            </span>
+            </a>
+          </li>  
+           
+        </ul>
+        <ul class="navbar-nav">
+               <ng-template #anonymasuser>
+                <li  class="nav-item">
+                  <a class="nav-link" routerLink="/login">login</a>
+                </li>
+              </ng-template>
+          
+        <li class="dropdown nav-item" *ngIf="user;else anonymasuser">
+          <a class="nav-link">{{user.Name}}</a>
+          <div class="dropdown-content">
+            <a  routerLink="My/Order">MyOrder</a>
+            <a *ngIf="user.isAdmin"  routerLink="admin/orders">ManageOrders</a>
+            <a *ngIf="user.isAdmin"  routerLink="admin/products">ManageProducts</a>
+            <a class="menu-item" (click)="logout()">LogOut</a>
+          </div>
+          
+        
+      </li>
+          </ul>
+        </div>
+  </div>
+  
+</nav>
